@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mfho.skp\\Desktop\\H1 opgaver\\OOP\\Classes\\OOP Classes\\OOP Classes\\OOP Classes.csproj": {}
+    "C:\\Users\\mfho.skp\\Desktop\\Repository over alle opgaver\\portfolio-MathiasHolst\\OOP Classes\\OOP Classes\\OOP Classes.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mfho.skp\\Desktop\\H1 opgaver\\OOP\\Classes\\OOP Classes\\OOP Classes\\OOP Classes.csproj": {
+    "C:\\Users\\mfho.skp\\Desktop\\Repository over alle opgaver\\portfolio-MathiasHolst\\OOP Classes\\OOP Classes\\OOP Classes.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mfho.skp\\Desktop\\H1 opgaver\\OOP\\Classes\\OOP Classes\\OOP Classes\\OOP Classes.csproj",
+        "projectUniqueName": "C:\\Users\\mfho.skp\\Desktop\\Repository over alle opgaver\\portfolio-MathiasHolst\\OOP Classes\\OOP Classes\\OOP Classes.csproj",
         "projectName": "OOP Classes",
-        "projectPath": "C:\\Users\\mfho.skp\\Desktop\\H1 opgaver\\OOP\\Classes\\OOP Classes\\OOP Classes\\OOP Classes.csproj",
+        "projectPath": "C:\\Users\\mfho.skp\\Desktop\\Repository over alle opgaver\\portfolio-MathiasHolst\\OOP Classes\\OOP Classes\\OOP Classes.csproj",
         "packagesPath": "C:\\Users\\mfho.skp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mfho.skp\\Desktop\\H1 opgaver\\OOP\\Classes\\OOP Classes\\OOP Classes\\obj\\",
+        "outputPath": "C:\\Users\\mfho.skp\\Desktop\\Repository over alle opgaver\\portfolio-MathiasHolst\\OOP Classes\\OOP Classes\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
