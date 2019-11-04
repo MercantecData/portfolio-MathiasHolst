@@ -1,0 +1,11 @@
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\bin\Debug\netcoreapp3.0\TælleProgram.exe
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\bin\Debug\netcoreapp3.0\TælleProgram.deps.json
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\bin\Debug\netcoreapp3.0\TælleProgram.runtimeconfig.json
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\bin\Debug\netcoreapp3.0\TælleProgram.runtimeconfig.dev.json
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\bin\Debug\netcoreapp3.0\TælleProgram.dll
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\bin\Debug\netcoreapp3.0\TælleProgram.pdb
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\obj\Debug\netcoreapp3.0\TælleProgram.csprojAssemblyReference.cache
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\obj\Debug\netcoreapp3.0\TælleProgram.AssemblyInfoInputs.cache
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\obj\Debug\netcoreapp3.0\TælleProgram.AssemblyInfo.cs
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\obj\Debug\netcoreapp3.0\TælleProgram.dll
+C:\Users\mfho.skp\Desktop\H1 opgaver\OOP\TælleProgram\TælleProgram\obj\Debug\netcoreapp3.0\TælleProgram.pdb
