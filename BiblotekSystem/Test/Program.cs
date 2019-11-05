@@ -45,9 +45,12 @@ namespace Test
             Book firstBook = new Book("Harry Potter", 21, false);
             Book secondBook = new Book("Guinness record 2012", 365, false);
 
-            /*Book[] allBooks = new Book[2];
+            //UNUSED
+            Book[] allBooks = new Book[2];
             allBooks[0] = firstBook;
-            allBooks[1] = secondBook;*/
+            allBooks[1] = secondBook;
+
+
 
             //GEM BØGERENES DATA I EN LISTE
             newBook.Add(firstBook);
@@ -72,6 +75,8 @@ namespace Test
             secondBook.lånetidIDage = 730;
             Console.WriteLine("Kasper's bog's lånetid er nu sat til: " + newBook[1].lånetidIDage + " Dage" +
                 "");
+
+            //730 DAGE SENERE!
 
         }
     }
