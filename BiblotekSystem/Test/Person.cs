@@ -10,13 +10,15 @@ namespace Test
         public int age;
         public string city;
         public string bookLoaned;
+        public int debt;
 
-        public Person(string fullName, int age, string city, string bookLoaned)
+        public Person(string fullName, int age, string city, string bookLoaned, int debt)
         {
             this.fullName = fullName;
             this.age = age;
             this.city = city;
             this.bookLoaned = bookLoaned;
+            this.debt = debt;
         }
 
         public void description()

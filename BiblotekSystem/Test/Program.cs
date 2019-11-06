@@ -8,8 +8,8 @@ namespace Test
         static void Main(string[] args)
         {
             //LAVE 2 NYE PERSONER MED NAVN, ALDER, BY OG HVILKEN BOG DE LÅNER
-            Person person1 = new Person("Mathias Holst", 16, "Viborg", "Harry Potter");
-            Person person2 = new Person("Kasper Grønne", 19, "Viborg", "Harry Potter");
+            Person person1 = new Person("Mathias Holst", 16, "Viborg", "Harry Potter", 0);
+            Person person2 = new Person("Kasper Grønne", 19, "Viborg", "Harry Potter", 0);
 
             if (person1.age < 18 && person1.bookLoaned != "")
             {
@@ -76,7 +76,24 @@ namespace Test
             Console.WriteLine("Kasper's bog's lånetid er nu sat til: " + newBook[1].lånetidIDage + " Dage" +
                 "");
 
-            //730 DAGE SENERE!
+            //731 DAGE SENERE!
+            secondBook.lånetidIDage = -1;
+
+
+            //IF STATEMENT THAT RUNS IF THE EXPIRE DATE RUNS OUT
+            if (firstBook.lånetidIDage < 1 && firstBook.tilgængelig == false)
+            {
+                Console.WriteLine(person1.fullName + " lent the book " + person1.bookLoaned + " and the borrow time has expired!");
+                person1.debt += 100;
+                Console.WriteLine(person1.fullName + " now owes the library " + person1.debt + "$.");
+
+            }
+            if (secondBook.lånetidIDage < 1 && secondBook.tilgængelig == false)
+            {
+                Console.WriteLine(person2.fullName + " lent the book " + person2.bookLoaned + " and the borrow time has expired!");
+                person2.debt += 100;
+                Console.WriteLine(person2.fullName + " now owes the library " + person2.debt + "$.");
+            }
 
         }
     }
