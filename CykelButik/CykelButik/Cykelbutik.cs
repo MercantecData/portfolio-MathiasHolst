@@ -39,7 +39,7 @@ namespace CykelButik
             }
             else if (cykel1.hjulstørrelse > index && cykel2.hjulstørrelse < index)
             {
-                return cykel2.mærke
+                return cykel2.mærke;
             }
             return CykelNavne.ToString();
         }
