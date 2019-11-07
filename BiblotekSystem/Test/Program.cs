@@ -7,6 +7,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            //LAV ET LIBARY
+            Libary MitLibary = new Libary(2, 0, 2);
             //LAVE 2 NYE PERSONER MED NAVN, ALDER, BY OG HVILKEN BOG DE LÅNER
             Person person1 = new Person("Mathias Holst", 16, "Viborg", "Harry Potter", 0);
             Person person2 = new Person("Kasper Grønne", 19, "Viborg", "Harry Potter", 0);
@@ -32,7 +34,7 @@ namespace Test
             Console.WriteLine();
             person1.age = 21;
             person1.fullName = "Mathias F Holst";
-            person2.bookLoaned = "Lord of the rings";
+            person2.bookLoaned = "Guinness record 2012";
 
             person1.Description();
             person2.Description();
@@ -43,7 +45,14 @@ namespace Test
 
             //LAVE 2 BØGER MED TITEL LÅNETID OG OM DE ER TILGÆNGELIGE
             Book firstBook = new Book("Harry Potter", 21, false);
+            MitLibary.loanedOut += 1;
+            MitLibary.stillAvailable -= 1;
             Book secondBook = new Book("Guinness record 2012", 365, false);
+            MitLibary.loanedOut += 1;
+            MitLibary.stillAvailable -= 1;
+
+            MitLibary.LibaryBookStatus();
+            Console.WriteLine();
 
             //UNUSED
             Book[] allBooks = new Book[2];
@@ -66,14 +75,14 @@ namespace Test
             Console.WriteLine();
 
             //BOGEN AFLEVERET TILBAGE
-            firstBook.tilgængelig = true;
+            MitLibary.ReturnBook(firstBook.tilgængelig, person1.bookLoaned);
 
-            Console.WriteLine(newBook[0].tilgængelig);
-            Console.WriteLine("Den er nu afleveret tilbage og kan nu lånes af en ny.");
+            Console.WriteLine("It is now delivered back to the library and can now borrows by a new person.");
+            MitLibary.LibaryBookStatus();
 
-            Console.WriteLine("Kasper vil gerne ændre sin lånetid til 2 år i stedet for 1.");
+            Console.WriteLine("Kasper would like to change his borrow time to 2 years instead of 1.");
             secondBook.lånetidIDage = 730;
-            Console.WriteLine("Kasper's bog's lånetid er nu sat til: " + newBook[1].lånetidIDage + " Dage" +
+            Console.WriteLine("Kasper's book's borrow time is now sat to: " + newBook[1].lånetidIDage + " Dage" +
                 "");
 
             //731 DAGE SENERE!

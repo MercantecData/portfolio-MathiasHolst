@@ -16,5 +16,6 @@ namespace Test
             this.lånetidIDage = lånetidIDage;
             this.tilgængelig = tilgængelig;
         }
+
     }
 }

@@ -17,9 +17,19 @@ namespace Test
             this.stillAvailable = stillAvailable;
         }
 
-        public void libaryBookStatus()
+        public void LibaryBookStatus()
         {
             Console.WriteLine("Total of " + numberOfBooks + " in the libary. And " + loanedOut + " is loaned out. " + stillAvailable + " are still available.");
+        }
+
+        public void ReturnBook(bool afleveret, string bookName)
+        {
+            afleveret = true;
+            loanedOut -= 1;
+            stillAvailable += 1;
+            
+
+            Console.WriteLine(bookName + " is now returned.");
         }
     }
 }
