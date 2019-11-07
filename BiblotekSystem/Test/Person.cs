@@ -21,7 +21,7 @@ namespace Test
             this.debt = debt;
         }
 
-        public void description()
+        public void Description()
         {
             Console.WriteLine(fullName + " loaned a book " + bookLoaned + " and lives in " + city + " this persons age is " + age);
         }

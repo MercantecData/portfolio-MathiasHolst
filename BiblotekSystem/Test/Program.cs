@@ -17,7 +17,7 @@ namespace Test
             }
             else
             {
-                person1.description();
+                person1.Description();
             }
 
             if (person2.age < 18 && person2.bookLoaned != "")
@@ -26,7 +26,7 @@ namespace Test
             }
             else
             {
-                person2.description();
+                person2.Description();
             }
 
             Console.WriteLine();
@@ -34,8 +34,8 @@ namespace Test
             person1.fullName = "Mathias F Holst";
             person2.bookLoaned = "Lord of the rings";
 
-            person1.description();
-            person2.description();
+            person1.Description();
+            person2.Description();
             Console.WriteLine();
 
             //LAVE 1 LISTE MED BØGER
@@ -77,7 +77,16 @@ namespace Test
                 "");
 
             //731 DAGE SENERE!
-            secondBook.lånetidIDage = -1;
+            void dageGåetFirstBook(int DaysGoneBy)
+            {
+                firstBook.lånetidIDage -= DaysGoneBy;
+            }
+            void dageGåetSecondBook(int DaysGoneBy)
+            {
+                secondBook.lånetidIDage -= DaysGoneBy;
+            }
+            dageGåetSecondBook(731);
+            Console.WriteLine(person2.bookLoaned + " has " + secondBook.lånetidIDage + " days back to be delivered.");
 
 
             //IF STATEMENT THAT RUNS IF THE EXPIRE DATE RUNS OUT
@@ -94,7 +103,6 @@ namespace Test
                 person2.debt += 100;
                 Console.WriteLine(person2.fullName + " now owes the library " + person2.debt + "$.");
             }
-
         }
     }
 }
