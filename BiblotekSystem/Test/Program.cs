@@ -19,7 +19,7 @@ namespace Test
             }
             else
             {
-                person1.Description();
+                Console.WriteLine(person1.Description());
             }
 
             if (person2.age < 18 && person2.bookLoaned != "")
@@ -28,7 +28,7 @@ namespace Test
             }
             else
             {
-                person2.Description();
+                Console.WriteLine(person2.Description());
             }
 
             Console.WriteLine();
@@ -36,12 +36,9 @@ namespace Test
             person1.fullName = "Mathias F Holst";
             person2.bookLoaned = "Guinness record 2012";
 
-            person1.Description();
-            person2.Description();
+            Console.WriteLine(person1.Description());
+            Console.WriteLine(person2.Description());
             Console.WriteLine();
-
-            //LAVE 1 LISTE MED BØGER
-            List<Book> newBook = new List<Book>();
 
             //LAVE 2 BØGER MED TITEL LÅNETID OG OM DE ER TILGÆNGELIGE
             Book firstBook = new Book("Harry Potter", 21, false);
@@ -51,7 +48,7 @@ namespace Test
             MitLibary.loanedOut += 1;
             MitLibary.stillAvailable -= 1;
 
-            MitLibary.LibaryBookStatus();
+            Console.WriteLine(MitLibary.LibaryBookStatus());
             Console.WriteLine();
 
             //UNUSED
@@ -62,27 +59,27 @@ namespace Test
 
 
             //GEM BØGERENES DATA I EN LISTE
-            newBook.Add(firstBook);
-            newBook.Add(secondBook);
+            MitLibary.newBook.Add(firstBook);
+            MitLibary.newBook.Add(secondBook);
             
             Console.Write(person1.fullName + "'s book titel is: ");
-            Console.WriteLine(newBook[0].titel);
+            Console.WriteLine(MitLibary.newBook[0].titel);
             Console.Write(person2.fullName + "'s book titel is: ");
-            Console.WriteLine(newBook[1].titel);
+            Console.WriteLine(MitLibary.newBook[1].titel);
 
             Console.WriteLine();
             Console.WriteLine("21 days later!");
             Console.WriteLine();
 
             //BOGEN AFLEVERET TILBAGE
-            MitLibary.ReturnBook(firstBook.tilgængelig, person1.bookLoaned);
+            Console.WriteLine(MitLibary.ReturnBook(firstBook.tilgængelig, person1.bookLoaned));
 
             Console.WriteLine("It is now delivered back to the library and can now borrows by a new person.");
-            MitLibary.LibaryBookStatus();
+            Console.WriteLine(MitLibary.LibaryBookStatus());
 
             Console.WriteLine("Kasper would like to change his borrow time to 2 years instead of 1.");
             secondBook.lånetidIDage = 730;
-            Console.WriteLine("Kasper's book's borrow time is now sat to: " + newBook[1].lånetidIDage + " Dage" +
+            Console.WriteLine("Kasper's book's borrow time is now sat to: " + MitLibary.newBook[1].lånetidIDage + " Dage" +
                 "");
 
             //731 DAGE SENERE!
