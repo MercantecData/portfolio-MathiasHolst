@@ -83,15 +83,7 @@ namespace Test
                 "");
 
             //731 DAGE SENERE!
-            void dageGåetFirstBook(int DaysGoneBy)
-            {
-                firstBook.lånetidIDage -= DaysGoneBy;
-            }
-            void dageGåetSecondBook(int DaysGoneBy)
-            {
-                secondBook.lånetidIDage -= DaysGoneBy;
-            }
-            dageGåetSecondBook(731);
+            MitLibary.dageGåetSecondBook(firstBook.lånetidIDage, 731);
             Console.WriteLine(person2.bookLoaned + " has " + secondBook.lånetidIDage + " days back to be delivered.");
 
 
