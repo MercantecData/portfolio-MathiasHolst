@@ -6,6 +6,7 @@ namespace Test
 {
     class Libary
     {
+        public List<Book> newBook = new List<Book>();
         public int numberOfBooks;
         public int loanedOut;
         public int stillAvailable;
@@ -32,6 +33,13 @@ namespace Test
             return bookName + " is now returned.";
         }
 
-        public List<Book> newBook = new List<Book>();
+        public void DageGåetFirstBook(int nuværendeLånetid, int DaysGoneBy)
+        {
+            nuværendeLånetid -= DaysGoneBy;
+        }
+        public void DageGåetSecondBook(int nuværendeLånetid, int DaysGoneBy)
+        {
+            nuværendeLånetid -= DaysGoneBy;
+        }
     }
 }
