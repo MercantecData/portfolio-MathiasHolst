@@ -1,48 +1,39 @@
 <link rel="stylesheet" href="style.css">
-<h1>
-    <a class="troll" href="https://www.sanger.dk">
-        VÆR VELKOMMEN!
+<script type="text/javascript" src="script.js"></script>
+<body background="https://www.pixelstalk.net/wp-content/uploads/2016/06/Gif-Wallpapers-HD-Free-Download.gif">
+
+    <h1>
+        <a class="troll" href="https://www.sanger.dk">
+            VÆR VELKOMMEN!
+        </a>
+    </h1>
+    
+    <br>
+    <h2>
+        Lidt om mig:
+    </h2>
+    <p id="test" onclick="changeSize()">
+        Hej, mit navn er Mathias og jeg er 17 år gammel.
+    </p>
+    <h3>
+        Lidt om min fritid/skole:
+    </h3>
+    <a href="https://www.mercantec.dk/">
+        Min skole
     </a>
-</h1>
+    <br>
+    <a href="https://www.mercantec.dk/om-mercantec/om-mercantec/om-mercantec/praktikcenter-viborg">
+        Min praktikplads
+    </a>
+    <br>
+    <br>
+    <button id="time" onmouseover="displayTime()">The time is?</button>
+    <br>
 
-<img src="file:///C:/Users/mfho.skp/Downloads/660276%20(3).JPG">
-<br>
-<h2>
-    Lidt om mig:
-</h2>
-<p id="test">
-    Hej, mit navn er Mathias og jeg er 17 år gammel.
-</p>
-<h3>
-    Lidt om min fritid/skole:
-</h3>
-<a href="https://www.mercantec.dk/">
-    Min skole
-</a>
-<br>
-<a href="https://www.mercantec.dk/om-mercantec/om-mercantec/om-mercantec/praktikcenter-viborg">
-    Min praktikplads
-</a>
-<br>
-<button type="button" onclick="document.getElementById('test').style.fontSize='20px'">Click Here!</button>
-<br>
-<button onmouseover="this.innerHTML = Date()">The time is?</button>
-<br>
-
-
-<button onclick="displayDate()">The time is?</button>
-
-<script>
-function displayDate() {
-  document.getElementById("time").innerHTML = Date();
-}
-</script>
-
-<p id="time"></p>
-
-<p>Age:</p>
-<form>
-        <input type="radio" name="gender" value="0-18" checked> 0-18<br>
-        <input type="radio" name="gender" value="19-50"> 19-50<br>
-        <input type="radio" name="gender" value="50..."> 50...
-</form>
+    <form>
+            <input type="radio" name="gender" value="Male" checked> Male<br>
+            <input type="radio" name="gender" value="Female"> Female<br>
+            <input type="radio" name="gender" value="Other"> Other
+    </form>
+    
+    
