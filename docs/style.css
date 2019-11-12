@@ -1,8 +1,12 @@
 body{
     background-size:     cover;
     background-repeat:   no-repeat;
-    background-position: center center;
+    background-position: center;
     color: white;
+}
+
+input{
+    margin-left: 10%;
 }
 
 a{
@@ -49,3 +53,21 @@ button{
 form{
     margin-left: 10%
 }
+
+/*Her er designet til min knap*/
+.my_button{
+    margin-left: 10%;
+    background-color: red;
+    border: solid blueviolet 2px; 
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.my_button:hover{
+    cursor: pointer;
+    background-color: darkred;
+}
+
+.my_button:active{
+    background-color: skyblue;
+} 

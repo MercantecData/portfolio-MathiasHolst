@@ -7,6 +7,8 @@ namespace Test
     {
         static void Main(string[] args)
         {
+            int i = 1;
+            Console.WriteLine(i -= -1);
             //LAV ET LIBARY
             Libary MitLibary = new Libary(2, 0, 2);
             //LAVE 2 NYE PERSONER MED NAVN, ALDER, BY OG HVILKEN BOG DE LÅNER
@@ -83,7 +85,7 @@ namespace Test
                 "");
 
             //731 DAGE SENERE!
-            MitLibary.dageGåetSecondBook(firstBook.lånetidIDage, 731);
+            MitLibary.DageGåetSecondBook(firstBook.lånetidIDage, 731);
             Console.WriteLine(person2.bookLoaned + " has " + secondBook.lånetidIDage + " days back to be delivered.");
 
 
