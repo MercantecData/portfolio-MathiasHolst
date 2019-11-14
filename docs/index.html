@@ -1,6 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
 <link rel="stylesheet" href="style.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
 <script type="text/javascript" src="script.js"></script>
-<script src="jq.js"></script>
 <body background="https://www.pixelstalk.net/wp-content/uploads/2016/06/Gif-Wallpapers-HD-Free-Download.gif">
 <div class="grid-container">
     <div class="Header">
@@ -23,7 +26,7 @@
         </form>
     </div>
     <div class="Content1">
-        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sint aut culpa aliquam molestias repellat provident atque corporis, id ipsum, rem accusantium quis vel laboriosam asperiores ut eaque incidunt! Pariatur.</div>
+        <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor sint aut culpa aliquam molestias repellat provident atque corporis, id ipsum, rem accusantium quis vel laboriosam asperiores ut eaque incidunt! Pariatur.</p></div>
         <ul>
             <li>¯\_(ツ)_/¯</li>
             <li>¯\_(ツ)_/¯</li>
@@ -41,7 +44,7 @@
         </ul>
     </div>
     <div class="Content2">
-        <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sint enim aperiam ea recusandae ipsum autem ad aspernatur voluptate doloribus nostrum velit distinctio porro, odit incidunt tempore perspiciatis et nemo.</div> 
+        <div><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non sint enim aperiam ea recusandae ipsum autem ad aspernatur voluptate doloribus nostrum velit distinctio porro, odit incidunt tempore perspiciatis et nemo.</p></div> 
         <ol type="I">
             <li>¯\_(ツ)_/¯</li>
             <li>¯\_(ツ)_/¯</li>
@@ -62,4 +65,13 @@
             <div class="my_button" id="time" onmouseover="displayTime()">The time is?</div> 
         </div>
 </div>
+<script>
+        $(document).ready(function(){
+          $("p").click(function(){
+            $(this).hide();
+        });
+    });
+</script>
+</head>
 </body>
+</html>
