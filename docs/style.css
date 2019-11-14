@@ -5,13 +5,9 @@ body{
     color: white;
 }
 
-input{
-    margin-left: 10%;
-}
-
 a{
     color: skyblue;
-    margin-left: 10%    
+    text-align: left;    
 }
 
 img{
@@ -22,7 +18,7 @@ img{
 
 h1{
     color: green;
-    margin-left: 10%
+    text-align: center;
 }
 
 h2{
@@ -50,17 +46,15 @@ button{
     margin-left: 10%
 }
 
-form{
-    margin-left: 10%
-}
-
 /*Her er designet til min knap*/
 .my_button{
-    margin-left: 10%;
     background-color: red;
     border: solid blueviolet 2px; 
     border-radius: 3px;
     display: inline-block;
+    padding: 2%;
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 
 .my_button:hover{
@@ -71,3 +65,49 @@ form{
 .my_button:active{
     background-color: skyblue;
 } 
+
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 100px auto auto auto;
+    grid-template-rows: 100px auto 100px;
+    height: 100vh;
+
+    grid-template-areas: 
+    "Sidebar Header Header Header"
+    "Sidebar Left Middle Right"
+    "Sidebar Footer Footer Footer";
+}
+
+.Header{
+    grid-area: Header;
+    border-bottom: solid 2px whitesmoke;
+}
+
+.SideBar{
+    grid-area: Sidebar;
+    border-right: solid 2px whitesmoke;
+}
+
+.Content{
+    grid-area: Left;
+    margin: 10px;
+    border-right: solid 2px whitesmoke;
+}
+
+.Content1{
+    grid-area: Middle;
+    margin: 10px;
+    border-right: solid 2px whitesmoke;
+}
+
+.Content2{
+    grid-area: Right;
+    margin: 10px;
+}
+
+.Footer{
+    grid-area: Footer;
+    border-top: solid 2px whitesmoke;
+    text-align: center;
+}
