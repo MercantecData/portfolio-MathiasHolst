@@ -45,3 +45,13 @@ function arrayPrintUd(id){
     i++;
   }
 }
+
+function textField(){
+  var x = document.getElementById("text1").value;
+  document.getElementById("text1").value = "";
+  var para = document.createElement("p");
+  var node = document.createTextNode(x)
+  para.appendChild(node);
+  var element = document.getElementById('textPrintOut');
+  element.appendChild(para);
+}
