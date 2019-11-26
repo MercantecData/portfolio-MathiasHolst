@@ -7,6 +7,7 @@ namespace CykelButik
     {
         static void Main(string[] args)
         {
+           
             Cykler cykel1 = new Cykler("Fast track", 32.0, "Sort");
             Cykler cykel2 = new Cykler("Dex", 28.0, "Gul");
             Cykelbutik MinButik = new Cykelbutik();
