@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 27. 11 2019 kl. 14:19:16
+-- Genereringstid: 28. 11 2019 kl. 09:28:11
 -- Serverversion: 10.4.8-MariaDB
 -- PHP-version: 7.3.11
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `h1databaseprog`
 --
+
+DELIMITER $$
+--
+-- Procedurer
+--
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sletOrdre` (IN `slet` INT(11))  BEGIN
+    DELETE 
+     FROM orders
+    WHERE order_id = slet;
+END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -201,7 +213,6 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `prod_id`, `user_id`, `addr_id`) VALUES
 (1, 4, 2, 2),
-(2, 7, 6, 6),
 (3, 1, 8, 8),
 (4, 1, 1, 1);
 
