@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Vært: 127.0.0.1
--- Genereringstid: 28. 11 2019 kl. 13:18:50
+-- Genereringstid: 29. 11 2019 kl. 10:10:07
 -- Serverversion: 10.4.8-MariaDB
 -- PHP-version: 7.3.11
 
@@ -29,7 +29,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `department` (
-  `WhichDepartment` varchar(255) DEFAULT NULL,
+  `departmentid` int(11) NOT NULL,
+  `whichdepartment` varchar(255) DEFAULT NULL,
   `employeeid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -37,12 +38,12 @@ CREATE TABLE `department` (
 -- Data dump for tabellen `department`
 --
 
-INSERT INTO `department` (`WhichDepartment`, `employeeid`) VALUES
-('department_1', 1),
-('department_1', 2),
-('department_3', 3),
-('department_3', 4),
-('department_2', 5);
+INSERT INTO `department` (`departmentid`, `whichdepartment`, `employeeid`) VALUES
+(1, 'Management', 1),
+(2, 'Management', 2),
+(3, 'Infrastructure', 5),
+(4, 'Service', 3),
+(5, 'Service', 4);
 
 -- --------------------------------------------------------
 
@@ -52,19 +53,19 @@ INSERT INTO `department` (`WhichDepartment`, `employeeid`) VALUES
 
 CREATE TABLE `dep_employee` (
   `employeeid` int(11) DEFAULT NULL,
-  `departmentID` int(11) NOT NULL
+  `departmentid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Data dump for tabellen `dep_employee`
 --
 
-INSERT INTO `dep_employee` (`employeeid`, `departmentID`) VALUES
+INSERT INTO `dep_employee` (`employeeid`, `departmentid`) VALUES
 (1, 1),
-(2, 1),
+(2, 2),
 (3, 3),
-(4, 3),
-(5, 2);
+(4, 4),
+(5, 5);
 
 -- --------------------------------------------------------
 
@@ -74,18 +75,18 @@ INSERT INTO `dep_employee` (`employeeid`, `departmentID`) VALUES
 
 CREATE TABLE `dep_manager` (
   `employeeid` int(11) DEFAULT NULL,
-  `departmentID` int(11) NOT NULL,
-  `managerid` int(11) NOT NULL
+  `managerid` int(11) NOT NULL,
+  `departmentid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Data dump for tabellen `dep_manager`
 --
 
-INSERT INTO `dep_manager` (`employeeid`, `departmentID`, `managerid`) VALUES
+INSERT INTO `dep_manager` (`employeeid`, `managerid`, `departmentid`) VALUES
 (1, 1, 1),
-(3, 3, 2),
-(5, 2, 3);
+(3, 2, 3),
+(5, 3, 5);
 
 -- --------------------------------------------------------
 
@@ -96,19 +97,20 @@ INSERT INTO `dep_manager` (`employeeid`, `departmentID`, `managerid`) VALUES
 CREATE TABLE `employee` (
   `employeeid` int(11) NOT NULL,
   `full_name` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL
+  `email` varchar(255) DEFAULT NULL,
+  `managerid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Data dump for tabellen `employee`
 --
 
-INSERT INTO `employee` (`employeeid`, `full_name`, `email`) VALUES
-(1, 'Mathias Holst', 'MathiasH@gmail.com'),
-(2, 'Jeppe Vad', 'JeppeV@gmail.com'),
-(3, 'Bobby Olsen', 'BobbyOlsen@gmail.com'),
-(4, 'Bob Byg', 'ByggemandBob@gmail.com'),
-(5, 'Bobby Karlsen', 'BobbyK@gmail.com');
+INSERT INTO `employee` (`employeeid`, `full_name`, `email`, `managerid`) VALUES
+(1, 'Mathias Holst', 'MathiasH@gmail.com', 1),
+(2, 'Jeppe Vad', 'JeppeV@gmail.com', NULL),
+(3, 'Bobby Olsen', 'BobbyOlsen@gmail.com', 2),
+(4, 'Bob Byg', 'ByggemandBob@gmail.com', NULL),
+(5, 'Bobby Karlsen', 'BobbyK@gmail.com', 3);
 
 -- --------------------------------------------------------
 
@@ -140,20 +142,20 @@ INSERT INTO `salaries` (`employeeid`, `salary`) VALUES
 
 CREATE TABLE `titles` (
   `employeeid` int(11) DEFAULT NULL,
-  `departmentid` int(11) DEFAULT NULL,
-  `title_name` varchar(255) DEFAULT NULL
+  `title_name` varchar(255) DEFAULT NULL,
+  `departmentid` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Data dump for tabellen `titles`
 --
 
-INSERT INTO `titles` (`employeeid`, `departmentid`, `title_name`) VALUES
-(1, 1, 'CEO/Manager'),
-(2, 1, 'Assistant'),
-(3, 3, 'Manager'),
-(4, 3, 'Employee'),
-(5, 2, 'Manager');
+INSERT INTO `titles` (`employeeid`, `title_name`, `departmentid`) VALUES
+(1, 'CEO/Manager', 1),
+(2, 'Assistant', 2),
+(3, 'Manager', 3),
+(4, 'Employee', 4),
+(5, 'Manager', 5);
 
 --
 -- Begrænsninger for dumpede tabeller
@@ -163,26 +165,30 @@ INSERT INTO `titles` (`employeeid`, `departmentid`, `title_name`) VALUES
 -- Indeks for tabel `department`
 --
 ALTER TABLE `department`
+  ADD PRIMARY KEY (`departmentid`),
   ADD KEY `employeeid` (`employeeid`);
 
 --
 -- Indeks for tabel `dep_employee`
 --
 ALTER TABLE `dep_employee`
-  ADD KEY `employeeid` (`employeeid`);
+  ADD KEY `employeeid` (`employeeid`),
+  ADD KEY `departmentid` (`departmentid`);
 
 --
 -- Indeks for tabel `dep_manager`
 --
 ALTER TABLE `dep_manager`
   ADD PRIMARY KEY (`managerid`),
-  ADD KEY `employeeid` (`employeeid`);
+  ADD KEY `employeeid` (`employeeid`),
+  ADD KEY `departmentid` (`departmentid`);
 
 --
 -- Indeks for tabel `employee`
 --
 ALTER TABLE `employee`
-  ADD PRIMARY KEY (`employeeid`);
+  ADD PRIMARY KEY (`employeeid`),
+  ADD KEY `managerid` (`managerid`);
 
 --
 -- Indeks for tabel `salaries`
@@ -194,7 +200,8 @@ ALTER TABLE `salaries`
 -- Indeks for tabel `titles`
 --
 ALTER TABLE `titles`
-  ADD KEY `employeeid` (`employeeid`);
+  ADD KEY `employeeid` (`employeeid`),
+  ADD KEY `departmentid` (`departmentid`);
 
 --
 -- Brug ikke AUTO_INCREMENT for slettede tabeller
@@ -226,13 +233,21 @@ ALTER TABLE `department`
 -- Begrænsninger for tabel `dep_employee`
 --
 ALTER TABLE `dep_employee`
-  ADD CONSTRAINT `dep_employee_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`);
+  ADD CONSTRAINT `dep_employee_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`),
+  ADD CONSTRAINT `dep_employee_ibfk_2` FOREIGN KEY (`departmentid`) REFERENCES `department` (`departmentid`);
 
 --
 -- Begrænsninger for tabel `dep_manager`
 --
 ALTER TABLE `dep_manager`
-  ADD CONSTRAINT `dep_manager_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`);
+  ADD CONSTRAINT `dep_manager_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`),
+  ADD CONSTRAINT `dep_manager_ibfk_2` FOREIGN KEY (`departmentid`) REFERENCES `department` (`departmentid`);
+
+--
+-- Begrænsninger for tabel `employee`
+--
+ALTER TABLE `employee`
+  ADD CONSTRAINT `employee_ibfk_1` FOREIGN KEY (`managerid`) REFERENCES `dep_manager` (`managerid`);
 
 --
 -- Begrænsninger for tabel `salaries`
@@ -244,7 +259,8 @@ ALTER TABLE `salaries`
 -- Begrænsninger for tabel `titles`
 --
 ALTER TABLE `titles`
-  ADD CONSTRAINT `titles_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`);
+  ADD CONSTRAINT `titles_ibfk_1` FOREIGN KEY (`employeeid`) REFERENCES `employee` (`employeeid`),
+  ADD CONSTRAINT `titles_ibfk_2` FOREIGN KEY (`departmentid`) REFERENCES `department` (`departmentid`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
