@@ -25,4 +25,4 @@ Man kan oprette sig som bruger uden at applikationen crasher.
 undervejs og derefter skal man kunne se hvilke relationer man har i systemet.
 (Man skal også kunne se hvem der er oprettet i en database på "phpmyadmin".)
 
-Hvor langt jeg regner med at nå inden slutningen af mandag: Jeg regner med at jeg kan oprette en bruger i konsollen i slutningen af idag. Den class jeg ville komme til at lave er create_User. 
+Hvor langt jeg regner med at nå inden slutningen af mandag: Jeg regner med at jeg kan oprette en bruger i konsollen i slutningen af idag. Den class jeg ville komme til at lave er create_User, above18 & below18. 
