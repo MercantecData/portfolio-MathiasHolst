@@ -37,7 +37,7 @@ namespace ComputerTeknoligProjekt
         }
         public void above18()
         {
-            Console.ForegroundColor = ConsoleColor.Green;
+            Console.ForegroundColor = ConsoleColor.Red;
         }
         public void below18()
         {
