@@ -20,5 +20,28 @@ namespace ComputerTeknoligProjekt
             this.address = address;
             this.zipcode = zipcode;
         }
+
+        public void CheckForNumbersInName(string name)
+        {
+            int i = 0;
+            while (i < name.Length)
+            {
+                Console.WriteLine(Char.IsDigit(name, i));
+                if (Char.IsDigit(name, i) == true)
+                {
+                    Console.Write("Write your First-/Lastname without numbers: ");
+                    name = Console.ReadLine();
+                }
+                i++;
+            }
+        }
+        public void above18()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+        }
+        public void below18()
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+        }
     }
 }
