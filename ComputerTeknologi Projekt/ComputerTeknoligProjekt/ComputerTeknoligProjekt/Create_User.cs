@@ -20,21 +20,8 @@ namespace ComputerTeknoligProjekt
             this.address = address;
             this.zipcode = zipcode;
         }
-
-        public void CheckForNumbersInName(string name)
-        {
-            int i = 0;
-            while (i < name.Length)
-            {
-                Console.WriteLine(Char.IsDigit(name, i));
-                if (Char.IsDigit(name, i) == true)
-                {
-                    Console.Write("Write your First-/Lastname without numbers: ");
-                    name = Console.ReadLine();
-                }
-                i++;
-            }
-        }
+        
+     
         public void above18()
         {
             Console.ForegroundColor = ConsoleColor.Red;
@@ -58,21 +45,45 @@ namespace ComputerTeknoligProjekt
             {
                 Console.WriteLine("You are too old to create an account on this application pls write your real age.");
                 Console.Write("Age: ");
-                age = int.Parse(Console.ReadLine());
+                try
+                {
+                    age = int.Parse(Console.ReadLine());
+                } catch (Exception) { 
+                }
             }
             Create_User user1 = new Create_User(first_Name, last_Name, age, address, zipcode);
 
-            //Prøver at gøre sådan man ikke kan skrive tal i sit navn
+            //Gør sådan man ikke kan skrive tal i sit navn
             Console.WriteLine("Press enter to check firstname for integers");
             Console.ReadLine();
-            user1.CheckForNumbersInName(first_Name);
+            //Tjekker for numre i dit fornavn
+            int i = 0;
+            while (i < first_Name.Length)
+            {
+                Console.WriteLine(Char.IsDigit(first_Name, i));
+                if (Char.IsDigit(first_Name, i) == true)
+                {
+                    Console.Write("Write your First-/Lastname without numbers: ");
+                    first_Name = Console.ReadLine();
+                }
+                i++;
+            }
 
             Console.WriteLine("Press enter to check lastname for integers");
             Console.ReadLine();
-            user1.CheckForNumbersInName(user1.last_Name);
-
-
-            Console.WriteLine($"{user1.first_Name} {user1.last_Name} {age} yr");
+            //Tjekker for numre i dit efternavn
+            i = 0;
+            while (i < last_Name.Length)
+            {
+                Console.WriteLine(Char.IsDigit(last_Name, i));
+                if (Char.IsDigit(last_Name, i) == true)
+                {
+                    Console.Write("Write your First-/Lastname without numbers: ");
+                    last_Name = Console.ReadLine();
+                }
+                i++;
+            }
+            Console.WriteLine($"{first_Name} {last_Name} {age} yr");
 
             //De 2 forskellige interfaces for en person over eller under 18
             if (user1.age >= 18)
@@ -83,7 +94,14 @@ namespace ComputerTeknoligProjekt
                 while (adultID > 999)
                 {
                     Console.Write("If my calculations are right you should be at a age 18 or above \nso pls right your first 3-digits in your id: ");
-                    adultID = int.Parse(Console.ReadLine());
+                    try
+                    {
+                        adultID = int.Parse(Console.ReadLine());
+                    } catch (Exception)
+                    {
+                        Console.WriteLine("Write numbers not letters");
+                        adultID = int.Parse(Console.ReadLine());
+                    }
                     if (adultID > 999)
                     {
                         Console.WriteLine("You should only write the first 3-digits in your id no more than that (Press enter to try again)");
@@ -103,7 +121,14 @@ namespace ComputerTeknoligProjekt
                 while (parentID > 999)
                 {
                     Console.Write($"If my calculations are right you should be at a age below 18 \nso pls right your moms/dads first 3-digits in their id: ");
-                    parentID = int.Parse(Console.ReadLine());
+                    try
+                    {
+                        parentID = int.Parse(Console.ReadLine());
+                    } catch (Exception)
+                    {
+                        Console.WriteLine("Write numbers not letters");
+                        parentID = int.Parse(Console.ReadLine());
+                    }
                     below18 user1below18 = new below18(parentID);
                     if (parentID > 999)
                     {
