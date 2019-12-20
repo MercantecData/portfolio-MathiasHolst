@@ -86,11 +86,11 @@ namespace ComputerTeknoligProjekt
             Console.WriteLine($"{first_Name} {last_Name} {age} yr");
 
             //De 2 forskellige interfaces for en person over eller under 18
+            //Du kan kun skrive 3 cifre i dit id og age værdien er 18 eller højere
             if (user1.age >= 18)
             {
                 user1.above18();
                 int adultID = 1000;
-                //Du kan kun skrive 3 cifre i dit id
                 while (adultID > 999)
                 {
                     Console.Write("If my calculations are right you should be at a age 18 or above \nso pls right your first 3-digits in your id: ");
@@ -113,11 +113,11 @@ namespace ComputerTeknoligProjekt
                 above18 user1above18 = new above18(adultID);
                 Console.Write("Write quit if you created all users you want to: ");
             }
+            //Du kan kun skrive 3 cifre i dit id hvis age værdien er under 18
             else if (user1.age < 18)
             {
                 user1.below18();
                 int parentID = 1000;
-                //Du kan kun skrive 3 cifre i dit id
                 while (parentID > 999)
                 {
                     Console.Write($"If my calculations are right you should be at a age below 18 \nso pls right your moms/dads first 3-digits in their id: ");

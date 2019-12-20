@@ -9,6 +9,12 @@ namespace ComputerTeknoligProjekt
         {
             //Laver en liste hvor users kan sættes i
             List<Create_User> newList = new List<Create_User>();
+            Console.ForegroundColor = ConsoleColor.White;
+
+
+            int 
+                age = 0,
+                zipcode = 0;
 
             //Oprettelse af user1
             Console.Write("Firstname: ");
@@ -16,7 +22,6 @@ namespace ComputerTeknoligProjekt
             Console.Write("Lastname: ");
             string last_Name = Console.ReadLine();
             Console.Write("Age: ");
-            int age = 0;
             try
             {
                 age = int.Parse(Console.ReadLine());
@@ -28,7 +33,6 @@ namespace ComputerTeknoligProjekt
             Console.Write("Address: ");
             string address = Console.ReadLine();
             Console.Write("Postalcode: ");
-            int zipcode = 0;
             try
             {
                 zipcode = int.Parse(Console.ReadLine());
@@ -46,6 +50,7 @@ namespace ComputerTeknoligProjekt
             Console.Clear();
 
             //Forhindre oprettelse af user2
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"Write {"stop"} to stop creating more users.");
             string stop = Console.ReadLine().Trim().ToLower();
 
@@ -88,6 +93,7 @@ namespace ComputerTeknoligProjekt
                 Console.Clear();
 
                 //Forhindre oprettelse af user3
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($"Write {"stop"} to stop creating more users");
                 stop = Console.ReadLine().Trim().ToLower();
 
@@ -120,6 +126,7 @@ namespace ComputerTeknoligProjekt
                         Console.WriteLine("Write numbers not letters");
                         zipcode = int.Parse(Console.ReadLine());
                     }
+                    
 
                     Create_User user3 = new Create_User(first_Name, last_Name, age, address, zipcode);
 
@@ -131,6 +138,8 @@ namespace ComputerTeknoligProjekt
             }
 
             //Brugere oprettet i systemet
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Clear();
             Console.WriteLine("User's in the system");
             Console.WriteLine("---------------------");
             Console.WriteLine($" - {newList[0].first_Name} {newList[0].last_Name}");
@@ -145,6 +154,7 @@ namespace ComputerTeknoligProjekt
             }
             catch (Exception) { }
             Console.ReadLine();
+            
 
             //Relations tjek hvor der tages højde for antallet af users oprettet
             try
